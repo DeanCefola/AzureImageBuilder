@@ -5,7 +5,7 @@
 ##########################################
 $imageResourceGroup = 'AIB-Rg'
 $location           = 'eastus'
-$imageTemplateName  = 'wvd10ImageTemplate01'
+$imageTemplateName  = 'wvd10ImageTemplate00'
 $templateFilePath   = "armTemplateWVD.json"
 Import-Module -Name Az.ImageBuilder
 
