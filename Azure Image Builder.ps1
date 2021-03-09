@@ -45,8 +45,8 @@ $idenityName      = "aibIdentity"+$timeInt
 New-AzUserAssignedIdentity `
     -ResourceGroupName $imageResourceGroup `
     -Name $idenityName
-$idenityNameResourceId=$(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).Id
-$idenityNamePrincipalId=$(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).PrincipalId
+$idenityNameResourceId  = $(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).Id
+$idenityNamePrincipalId = $(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).PrincipalId
 
 
 ##############################################################
