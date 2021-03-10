@@ -5,7 +5,7 @@
 ##########################################
 $imageResourceGroup = 'AIB-Rg'
 $location           = 'eastus'
-$imageTemplateName  = 'wvd10ImageTemplate00'
+$imageTemplateName  = 'wvd10ImageTemplate02'
 $templateFilePath   = "armTemplateWVD.json"
 Import-Module -Name Az.ImageBuilder
 
@@ -31,6 +31,7 @@ Start-AzImageBuilderTemplate `
     -ResourceGroupName $imageResourceGroup `
     -Name $imageTemplateName `
     -NoWait
+    
 $getStatus = $(Get-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $imageTemplateName)
 $getStatus | Format-List -Property *
 cls
