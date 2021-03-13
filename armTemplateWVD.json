@@ -55,10 +55,10 @@
             "customize": [        
                     {
                         "type": "PowerShell",
-                        "name": "installFsLogix",
+                        "name": "FsLogixSettings",
                         "runElevated": true,
                         "runAsSystem": true,
-                        "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/14_Building_Images_WVD/0_installConfFsLogix.ps1"
+                        "scriptUri": "https://raw.githubusercontent.com/DeanCefola/Azure-WVD/master/PowerShell/FSLogixSettingsOnly.ps1"
                     },
                     {
                         "type": "PowerShell",
@@ -80,6 +80,11 @@
                             "include:$true"
                                     ],
                         "updateLimit": 40
+                    },                    
+                    {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post Windows Updates'",
+                        "restartTimeout": "5m"
                     }
             ],
             "distribute": 
