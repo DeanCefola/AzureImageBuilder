@@ -21,10 +21,10 @@ Get-AzProviderFeature `
 #    Set up environment and variables    #
 ##########################################
 $currentAzContext   = Get-AzContext
-$imageResourceGroup = 'AIB-Rg'
+$imageResourceGroup = 'CPC-RG'
 $location           = 'eastus'
 $subscriptionID     = $currentAzContext.Subscription.Id
-$imageTemplateName  = 'wvd10ImageTemplate01'
+$imageTemplateName  = 'Win365-ImageTemplate'
 $runOutputName      = 'sigOutput'
 $CompanyName        = 'MSAzureAcademy'
 Import-Module Az.Accounts
@@ -76,8 +76,8 @@ New-AzRoleAssignment `
 #########################################
 #    Create the Shared Image Gallery    #
 #########################################
-$sigGalleryName = "aibgallery01"
-$imageDefName   = "win10wvd"
+$sigGalleryName = "Win365Gallery"
+$imageDefName   = "win365"
 
 # create gallery
 New-AzGallery `
@@ -94,8 +94,8 @@ New-AzGalleryImageDefinition `
     -OsState generalized `
     -OsType Windows `
     -Publisher $CompanyName `
-    -Offer 'Windows' `
-    -Sku '10wvd'
+    -Offer 'Win365' `
+    -Sku 'Personal'
 
 
 #############################################
