@@ -7,6 +7,7 @@
 #------------------------------------------------------------------------
 # 10/16/2018                       1.0       Intial Version
 # 03/25/2019                       2.0       Replace with a cleaner version
+# 06/05/2021                       2.1       Minor update, fixed spelling and updated Azure agent version
 #***************************************************************************
 #>
 
@@ -16,7 +17,7 @@
 
 # Global variables
 $Uri = "http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409" 
-$outfile = "$env:windir\temp\WindowsAzureVmAgent.2.7.1198.788.rd_art_stable.161208-0959.fre.msi"
+$outfile = "$env:windir\temp\WindowsAzureVmAgent.2.7.41491.1009_210309-1520.fre"
 $loc = "$env:windir\temp\sanpolicy.txt"
 $logloc ="$env:windir\temp\sanpolicylogfile.txt"
 $santext1 = "san policy=onlineall"
@@ -219,12 +220,12 @@ Write-Host -ForegroundColor Yellow "Starting to download the Microsoft Azure age
 Invoke-WebRequest -Uri $Uri -OutFile $outfile;
 Unblock-file -path $outfile;
 
-# Validating if the file downloaded PLEASE NOTE THE FILE IS SUBJECT TO CHANGE IN THE FUTURE!!!!!
-Test-path -path "$env:windir\temp\WindowsAzureVmAgent.2.7.1198.788.rd_art_stable.161208-0959.fre.msi"
+# Validating if the file downloaded PLEASE NOTE THE FILE IS SUBJECT TO CHANGE IN THE FUTURE(Last checked: 06/05/21)!!!!!
+Test-path -path "$env:windir\temp\WindowsAzureVmAgent.2.7.41491.1009_210309-1520.fre.msi"
 Write-Host -ForegroundColor Yellow "If you saw the word True then the file downloaded from the internet!"
 
 # Installing the Azure agent
-Write-Host -ForegroundColor Yellow "Starting sto install the Microsoft Azure Agent"
+Write-Host -ForegroundColor Yellow "Starting to install the Microsoft Azure Agent"
 & msiexec.exe /i $outfile /qn /l* $MSILOG
 
 # Setting sleep for 10 seconds
