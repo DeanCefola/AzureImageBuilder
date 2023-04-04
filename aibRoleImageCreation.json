@@ -3,7 +3,7 @@
         "roleName": "AIB-RBAC",
         "description": "Grants Azure Image Builder permission to work with Images ",
         "assignableScopes": [
-            "/subscriptions/3a8206a1-e9f3-44a2-84f0-e532b9862258"
+            ""
         ],
         "permissions": [
             {
